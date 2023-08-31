@@ -15,56 +15,79 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-                'color-1' : '#FF1F3D',
-                'color-2':'#252525',
-                'color-3':'#FFFFFF',
-                'color-4':'#25252533',
-              }
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'color-1': '#FF1F3D',
+                        'color-2': '#252525',
+                        'color-3': '#FFFFFF',
+                        'color-4': '#25252533',
+                        'color-5': '#252525B2',
+                        'color-6':'#25252526',
+                    }
+                }
             }
-          }
         }
-      </script>
+    </script>
 </head>
 
 <body>
     <!--Navber-->
     <nav>
-    <div class="navbar bg-base-100 mt-8">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
-                    </svg>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <button class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a class="">Sort by view</a></button>
-                    
-                </ul>
-            </div>
-            <div class="flex gap-4 ml-4">
-                <img class="w-1/2"  src="./icons/fi_3039386.png" alt="">
-                <h1 class="flex font-bold text-3xl text-color-2 text-center"><span class="text-color-1">PH</span> Tube</h1>
-                
-            </div>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <button class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a class="">Sort by view</a></button>
-        </div>
-        <div class="navbar-end">
-            <button class=" w-20 h-12 rounded bg-color-1 text-color-3 text-lg font-medium mr-4"><a class="">Blog</a></button>
-        </div>
-    </div>
-    <hr class="mt-6 ml-6 mr-6 border-t-2 h-4">
-</nav>
+        <div class="navbar bg-base-100 mt-8">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <button class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a
+                                class="">Sort by view</a></button>
 
+                    </ul>
+                </div>
+                <div class="flex gap-4 ml-4">
+                    <img class="w-1/2" src="./icons/fi_3039386.png" alt="">
+                    <h1 class="flex font-bold text-3xl text-color-2 text-center"><span class="text-color-1">PH</span>
+                        Tube</h1>
+
+                </div>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <button class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a class="">Sort by
+                        view</a></button>
+            </div>
+            <div class="navbar-end">
+                <button class=" w-20 h-12 rounded bg-color-1 text-color-3 text-lg font-medium mr-4"><a
+                        class="">Blog</a></button>
+            </div>
+        </div>
+        <hr class="mt-6 ml-6 mr-6 border-t-2 h-4">
+    </nav>
+
+    <!--main section-->
+<main-section>
+
+<div class="btn-container flex flex-wrap text-center justify-center  mt-6 gap-5 lg:flex-row" id="btn-container">
+    <!-- <button class="btn capitalize">Default</button>
+    <button class="btn capitalize">Primary</button>
+    <button class="btn capitalize">Secondary</button>
+    <button class="btn capitalize">Accent</button> -->
+
+
+
+</div>
+
+
+
+
+</main-section>
 
 
 
