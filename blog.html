@@ -1,12 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="ages.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>PH Tube Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'color-1': '#FF1F3D',
+                        'color-2': '#252525',
+                        'color-3': '#FFFFFF',
+                        'color-4': '#25252533',
+                        'color-5': '#252525B2',
+                        'color-6': '#25252526',
+                        'color-7': '#171717B2',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
-    
+    <!--Navber-->
+    <nav>
+        <div class="navbar bg-base-100 lg:mt-8">
+            <div class="navbar-start">
+
+                <div class="flex gap-4 ml-4">
+                    <img class="w-1/2" src="./icons/fi_3039386.png" alt="">
+                    <h1 class="flex font-bold text-3xl text-color-2 text-center"><span class="text-color-1">PH</span>
+                        Tube</h1>
+
+                </div>
+            </div>
+
+            <div class="navbar-end mr-2 lg:mr-8">
+                <h1 class=" font-bold text-4xl text-color-2 text-center"><span class="text-color-1 ml-8 lg:ml-0 "> BLOG
+                    </span>&nbsp; Question Answer</h1>
+            </div>
+        </div>
+        <hr class="mt-6 ml-6 mr-6 border-t-2 h-4">
+    </nav>
+    <!---main-section-->
+    <main-section>
+        <div class="collapse collapse-arrow bg-fuchsia-100 mt-10">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-2xl font-bold text-blue-500">
+                Q:- Discuss the scope of var, let, and const.
+            </div>
+            <div class="collapse-content font-medium text-lg">
+                <p> <b><u>Ans:-</u></b><br><br>var, let, and const are three different ways to declare variables in JavaScript.
+                    var declarations are globally scoped while let and const are block scoped. var variables can be
+                    updated and re-declared within its scope; let variables can be updated but not re-declared; const
+                    variables can neither be updated nor re-declared. They have different scopes . Their scopes
+                    are:<br><br><b>"var":</b><br>1. Function Scope => Variables declared with var are function-scoped,
+                    which means they are only accessible within the function in which they are declared in the function.
+                    Example: function price() {
+                    if (true) {
+                    var x = 90;
+                    }
+                    console.log(x);};<br>2. Hoisting scope => Variables declared with var are hoisted to the top of
+                    their global scope. This means that use a var variable before it's declared, it won't result in an
+                    error, but the value of the variable will be undefined.<br><br><b>"let":</b><br>1.Block Scoped =>
+                    Variables declared with let are block-scoped, meaning they are only accessible within the nearest
+                    enclosing block . This includes loops, if statements, and functions. Example: if (true) {
+                    let a = 10;
+                    let b = 10;
+
+                    console.log(a);
+                    console.log(b); };<br>2.No Hoisting => let declarations are not hoisted. Then can't access a let
+                    variable before it's declared within the same block.Example: function example() {
+                    if (true) {
+                    let y = 20;
+                    }
+                    console.log(y);} output is undefined because console.log(y) is not access in if
+                    statement.<br><br><b>"const":</b><br>1.Block Scoped => Like let variable, variables declared with
+                    const are block-scoped.<br>2.Immutable => Variables declared with const are constant and cannot be
+                    reassigned after their initial assignment. But objects and arrays declared with const, the reference
+                    to the object or array is constant, but the properties or elements inside them can be
+                    modified.Example: const pi = 3.14;
+                    pi = 3.14159; or const array = [2,3,4];
+                    array.push(7);here it's modified.<br><br>In modern JavaScript, it's recommended to use let and const
+                    over var because they offer block scoping, don't hoist variables, and provide better error handling.
+                    Use const when need to declare a variable that won't be reassigned,and use let when need a variable
+                    that can be reassigned within its scope.
+
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-lime-100">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-bold text-purple-500">
+                Q:- Tell us the use cases of null and undefined.
+            </div>
+            <div class="collapse-content font-medium text-lg">
+                <p><b><u>Ans:-</u></b><br><br>Null and undefined are two distinct concepts in JavaScript. They are used in different
+                    contexts. Undefined means the variable has been declared, but its value has not been assigned.The
+                    typeof() operator returns undefined for an undefined variable. <br> Null means an empty value or a
+                    blank value. The typeof() operator returns the type as an object for a variable whose value is
+                    assigned as null.<br> they have many use cases :<br> <b><u>null :</u></b><br>1. Absence of Value => null is
+                    often used to explicitly indicate the absence of a value for a variable, object property, or
+                    function return.&nbsp; Example: let price = null;<br>2. Initial Default Value => sometimes we use
+                    null as the initial default value for a variable, and then assign a meaningful value in those
+                    variable like let price = null; price = 40;<br>3. Clear values => null is used to reset or clear a
+                    variable or property when variable or property need to make it empty or non-existent.
+                    <br><br><b><u>undefined:</u></b> <br> 1. Uninitialized Variables => when a variable or object property is
+                    declared but not assigned a value, it's considered undefined until it takes a value. It's called
+                    uninitialized variables. <br> <br>2. Function Return => when a function doesn't return a value, it
+                    returns undefined by default. This can be used to indicate that the function doesn't have a return
+                    value. Example: function totalPrice(){}; output is undefined.<br><br> 3. Function Parameter => When a
+                    function is called with fewer arguments than declared parameters,if there has missing parameters
+                    then its output for missing parameters is undefined.<br> Example: function person(name,age){
+                    console.log(name);<br>console.log(age);
+                    } person("Rika"); Thats is undefined.<br><br>4. Accessing Non-Existent Object Properties => When access
+                    a property of an object that doesn't exist, then returns undefined. Example: let person ={age:20};
+                    console.log(person.name);<br><br> null and undefined are related to the absence of value, they are
+                    not the same. Handling these values properly is crucial to avoid unexpected errors and bugs in js
+                    code. </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-blue-100">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-bold text-pink-500">
+                Q:- What do you mean by REST API?
+            </div>
+            <div class="collapse-content font-medium text-lg">
+                <p><b><u>Ans:-</u></b><br><br>REST API stands for Representational State Transfer Application Programming
+                    Interface. A REST API is an API that conforms to the design principles of the REST, or
+                    representational state transfer architectural style. A RESTful API is one of the many possible ways
+                    that programs, servers,
+                    and web sites can share data and services.<br><br> REST describes the general rules for how the data and
+                    services are represented
+                    through the API so that other programs will be able to correctly request and
+                    receive the data and services that an API makes available. REST API has many characteristics.&nbsp;
+                    REST APIs use standard HTTP methods (verbs) for operations on resources. The most common HTTP
+                    methods used in REST are:
+                </p>
+                <p>
+                    <b>1. 'GET'</b> => Receive information about an API resource.<br>
+                    <b>2. 'POST'</b> => Create an API resource.<br>
+                    <b>3. 'PUT/PATCH'</b> => Update an API resource.<br>
+                    <b>4. 'DELETE'</b> => Delete an API resource.<br>
+                    This makes it easier to scale the API and improves performance by reducing the need to store and
+                    manage session data on the server.<br><br>
+                    The most common thing of using REST APIs is to deliver static resource representations in XML or
+                    JSON. this architectural style allows users to download and run code in the form of Java
+                    scripts.<br><br>REST APIs are widely used in web development and are the foundation for many web
+                    services, including social media APIs, e-commerce platforms, and more.
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+    </main-section>
+
+
+
+
+
 </body>
+
 </html>
