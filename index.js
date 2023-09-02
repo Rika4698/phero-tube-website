@@ -42,10 +42,17 @@ const handleLoadNews = async (categoryId) => {
 
     data.data.forEach((news) => {
         const div = document.createElement("div");
+        const second = news.others.posted_date;
+        const hour = parseInt(second/(3600));
+        const minutes = parseInt((second/60)-(hour*60));
+        
         div.innerHTML =
-            `<div class="card  bg-base-100 shadow-xl">
-        <figure class="" ><img class="w-80 h-40 rounded-xl  " src="${news.thumbnail
-            }" alt="" /></figure>
+            `<div class="card  bg-base-100 ">
+     <div>  <img class="w-96 h-44 rounded-xl lg: w-80 h-40 " src="${news.thumbnail
+            }" alt="" />
+            <div class="flex justify-end relative -top-8 " > ${second > 0 ? `<p class="w-auto h-6 pl-2 pr-2 absolute right-2 rounded-md  bg-color-2 font-normal text-sm text-color-3 text-center"> ${hour}hrs ${minutes} min ago</p>`:""}</div>
+           </div> 
+          
         <div class="card-body ">
         <div class="flex gap-6">
         <div class="avatar ">
@@ -67,7 +74,7 @@ const handleLoadNews = async (categoryId) => {
          
         </div>
       </div>`;
-        console.log(data.data.length);
+        console.log();
         cardContainer.appendChild(div);
     });
 
