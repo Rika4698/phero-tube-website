@@ -24,8 +24,8 @@
                         'color-3': '#FFFFFF',
                         'color-4': '#25252533',
                         'color-5': '#252525B2',
-                        'color-6':'#25252526',
-                        'color-7':'#171717B2',
+                        'color-6': '#25252526',
+                        'color-7': '#171717B2',
                     }
                 }
             }
@@ -61,11 +61,12 @@
                 </div>
             </div>
             <div class="navbar-center hidden lg:flex">
-                <button class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a class="">Sort by
+                <button onclick="sortData()"
+                    class=" w-40 h-12 rounded bg-color-4 text-color-2 text-lg font-medium mr-4 "><a class="">Sort by
                         view</a></button>
             </div>
             <div class="navbar-end">
-                <button class=" w-20 h-12 rounded bg-color-1 text-color-3 text-lg font-medium mr-4"><a
+                <button class=" w-20 h-12 rounded bg-color-1 text-color-3 text-lg font-medium mr-4" id="sort-btn"><a
                         href="http://127.0.0.1:5500/blog.html">Blog</a></button>
             </div>
         </div>
@@ -73,27 +74,27 @@
     </nav>
 
     <!--main section-->
-<main-section>
+    <main-section>
 
-<div class="btn-container flex flex-wrap text-center justify-center  mt-6 gap-5 lg:flex-row" id="btn-container">
-    <!-- <button class="btn capitalize">Default</button>
+        <div class="btn-container flex flex-wrap text-center justify-center  mt-6 gap-5 lg:flex-row" id="btn-container">
+            <!-- <button class="btn capitalize">Default</button>
     <button class="btn capitalize">Primary</button>
     <button class="btn capitalize">Secondary</button>
     <button class="btn capitalize">Accent</button> -->
-</div>
+        </div>
 
-<div class="grid grid-cols-1 my-10 mx-8   md:grid-cols-2 lg:grid-cols-4 gap-4" id="card-container">
-
-
+        <div class="grid grid-cols-1 my-10 mx-8   md:grid-cols-2 lg:grid-cols-4 gap-4" id="card-container">
 
 
 
-    
-</div>
 
 
 
-</main-section>
+        </div>
+
+
+
+    </main-section>
 
 
 
