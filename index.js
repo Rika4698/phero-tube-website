@@ -1,18 +1,22 @@
 let newData;
+let categoryBtnName="All"
 const handleCategory = async () => {
     const response = await fetch(
         "https://openapi.programming-hero.com/api/videos/categories"
     );
     const data = await response.json();
     const btnContainer = document.getElementById("btn-container");
-
-    let activeButton = null;
+     let activeButton = null;
     data.data.forEach((category) => {
         const div = document.createElement("div");
         const button = document.createElement("button");
+       
+        
         button.innerHTML = category.category;
         button.classList.add("w-28", "h-12", "rounded", "text-lg", "font-medium", "bg-color-6", "text-color-2");
+       
         button.addEventListener("click", () => {
+            btnContainer.childNodes[3].children[0].classList.remove("bg-red-500", "text-color-3");
 
             if (activeButton) {
                 activeButton.classList.remove("bg-color-1", "text-color-3");
@@ -21,14 +25,24 @@ const handleCategory = async () => {
 
 
             activeButton = button;
+            categoryBtnName=button.innerText;
+            // console.log(categoryBtnName);
             button.classList.remove("bg-color-6", "text-color-2");
             button.classList.add("bg-color-1", "text-color-3");
             handleLoadNews(category.category_id);
         });
-
+       
         div.appendChild(button);
+        
         btnContainer.appendChild(div);
     });
+   if(categoryBtnName==="All"){
+    
+    btnContainer.childNodes[3].children[0].classList.add("bg-red-500", "text-color-3");
+
+   }
+   
+    // console.log(btnContainer.childNodes[3].children[0]);
 };
 
 
@@ -43,28 +57,12 @@ const handleLoadNews = async (categoryId) => {
     const data = await response.json();
     const categoryData = data.data;
     newData = categoryData;
+
     displayCategoryCard(categoryData);
 }
 
-function sortData() {
 
-    //     const sortDataByViews = () => {
 
-    //    newData.sort((a,b) =>
-    //      b.others.views.slice(0,3) - a.others.views.slice(0,3));
-    //     };
-    //     console.log(sortDataByViews);
-    //    ;
-
-    // // const viewsArray = [];
-    // // const sorted =[];
-    // // newData.forEach((item) => {
-    // //     const views = item.others.views;
-    // //      viewsArray.push(parseFloat(views));
-    // //       sorted.push( viewsArray.sort((a, b) => a - b));
-    // //   });
-
-}
 
 
 
@@ -125,6 +123,12 @@ const displayCategoryCard = (categoryData) => {
     });
 
 
+};
+function sortData() {
+    let sorted = newData.sort((a, b) => parseFloat(b?.others?.views) - parseFloat(a?.others?.views));
+//    console.log(parseFloat(newData?.others?.views));
+    displayCategoryCard(sorted);
+    
 };
 handleCategory();
 handleLoadNews(1000);
